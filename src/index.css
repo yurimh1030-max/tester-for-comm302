@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --tv-brand: #2962ff;
+    --tv-green: #089981;
+    --tv-red: #f23645;
+    --tv-dark: #131722;
+    --tv-gray-bg: #f0f3fa;
+    --tv-light-border: #e0e3eb;
+    --tv-muted: #787b86;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
+    color: #131722;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Number tabular font */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle price tick flash animations */
+@keyframes flashGreen {
+  0% { background-color: rgba(8, 153, 129, 0.22); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flashRed {
+  0% { background-color: rgba(242, 54, 69, 0.22); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: flashGreen 0.9s ease-out;
+}
+
+.flash-down {
+  animation: flashRed 0.9s ease-out;
+}
